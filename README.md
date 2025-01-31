@@ -168,3 +168,373 @@ this is my UI/UX portfolio for my bootcamp course
     <script src="script.js"></script>
 </body>
 </html>
+
+/* Base Styles */
+:root {
+    --primary-green: #22c55e;
+    --background-dark: #171717;
+    --text-light: #d1d5db;
+    --card-background: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--background-dark);
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    gap: 1rem;
+}
+
+.home-icon {
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.home-icon:hover {
+    color: var(--primary-green);
+}
+
+.home-icon .icon {
+    stroke: currentColor;
+}
+
+.nav-link, .social-icon {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border: 3px solid #B3B3B3;
+    border-radius: 35px;
+}
+
+.nav-link:hover, .social-icon:hover {
+    color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--primary-green);
+}
+
+.social-icon .icon {
+    stroke: currentColor;
+}
+
+/* Hero Section */
+.hero {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.hero-image-container {
+    max-width: 1000px;
+    margin: 0 auto 2rem;
+    padding: 0.5rem;
+    background-color: var(--primary-green);
+    border-radius: 1.5rem;
+}
+
+.hero-image {
+    aspect-ratio: 16/9;
+    background-color: var(--card-background);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+.hero-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.hero-text h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+/* Case Studies Section */
+.case-studies {
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Case Study Player */
+.case-study-carousel {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.featured-case-study {
+    background-color: var(--primary-green);
+    padding: 0.75rem;
+    border-radius: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.case-study-image {
+    aspect-ratio: 16/9;
+    background-color: var(--card-background);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.case-study-title {
+    margin: 1.5rem 0;
+    font-size: 1.5rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Updated Carousel Controls */
+.carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    background-color: var(--background-dark);
+}
+
+.controls-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.controls-center {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.controls-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.control-btn {
+    color: var(--text-light);
+    background-color: transparent;
+    border: 3px solid #B3B3B3;
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn.large {
+    width: 4.5rem;
+    height: 4.5rem;
+}
+
+.control-btn:hover {
+    color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+.control-btn.active {
+    color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+.control-btn svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+/* Case Study Grid */
+.case-study-grid {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    display: flex;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.case-study-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.case-study-grid .case-study-card {
+    background-color: var(--primary-green);
+    padding: 0.5rem;
+    border-radius: 1.5rem;
+    transition: transform 0.3s ease;
+    min-width: 300px;
+    flex-shrink: 0;
+}
+
+.case-study-grid .case-study-card:hover {
+    transform: translateY(-5px);
+}
+
+.case-study-grid .case-study-image {
+    aspect-ratio: 1;
+}
+
+/* Profile Section */
+.profile {
+    padding: 2rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.featured-designer {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.profile-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.headshot-container {
+    background-color: var(--primary-green);
+    padding: 0.5rem;
+    border-radius: 1.5rem;
+}
+
+.headshot {
+    aspect-ratio: 1;
+    background-color: var(--card-background);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+.profile-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Skills and Discover Section */
+.skills-discover {
+    padding: 2rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.education-card, .contact-card {
+    background-color: var(--primary-green);
+    padding: 0.5rem;
+    border-radius: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.education-card > div, .contact-card > div {
+    background-color: var(--card-background);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    color: black;
+}
+
+.back-to-top {
+    display: block;
+    margin: 2rem auto;
+    padding: 8px 16px;
+    background-color: transparent;
+    color: var(--text-light);
+    border: 3px solid #B3B3B3;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+    color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-content,
+    .skills-discover {
+        grid-template-columns: 1fr;
+    }
+    
+    .case-study-carousel {
+        max-width: 100%;
+    }
+    
+    .carousel-controls {
+        padding: 0 1rem;
+    }
+    
+    .controls-center {
+        gap: 1rem;
+    }
+}
